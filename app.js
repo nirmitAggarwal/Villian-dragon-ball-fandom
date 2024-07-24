@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  const scrollAmount = 120; // Adjust based on your item width and container width
+  const scrollAmount = 120;
   let scrollPosition = 0;
 
   function autoScroll() {
@@ -15,5 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  setInterval(autoScroll, 3000); // Adjust interval time as needed
+  setInterval(autoScroll, 3000);
+
+  const items = document.querySelectorAll(".item");
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      items.forEach((i) => i.classList.remove("expanded"));
+      item.classList.add("expanded");
+    });
+  });
 });
+
+function expandTile(item) {
+  const items = document.querySelectorAll(".item");
+  items.forEach((i) => i.classList.remove("expanded"));
+  item.classList.add("expanded");
+}
