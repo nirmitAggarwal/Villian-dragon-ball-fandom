@@ -25,3 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function expandTile(item) {
+  const items = document.querySelectorAll(".item");
+  items.forEach((i) => i.classList.remove("expanded"));
+  item.classList.add("expanded");
+}
