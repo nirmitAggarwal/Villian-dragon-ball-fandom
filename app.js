@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".item");
   items.forEach((item) => {
     item.addEventListener("click", () => {
-      items.forEach((i) => i.classList.remove("expanded"));
-      item.classList.add("expanded");
+      if (window.innerWidth <= 768) {
+        // Mobile view
+        items.forEach((i) => i.classList.remove("expanded"));
+        item.classList.add("expanded");
+        setTimeout(() => {
+          item.classList.remove("expanded");
+        }, 5000); // Collapse after 5 seconds
+      }
     });
   });
 });
-
-function expandTile(item) {
-  const items = document.querySelectorAll(".item");
-  items.forEach((i) => i.classList.remove("expanded"));
-  item.classList.add("expanded");
-}
