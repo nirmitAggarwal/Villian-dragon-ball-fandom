@@ -27,7 +27,6 @@ body {
 
 .item {
   display: flex;
-  flex-direction: column; /* For mobile view */
   width: 350px;
   height: 100%;
   border-radius: 0.5rem;
@@ -38,15 +37,13 @@ body {
   position: relative;
 }
 
-.item:hover,
-.item.expanded {
+.item:hover {
   flex: 0 0 400px;
   box-shadow: 1px 3px 15px #7645d8;
   transform: translateY(-30px);
 }
 
-.item:hover .content,
-.item.expanded .content {
+.item:hover .content {
   opacity: 1;
   transform: translateY(0%);
   visibility: visible;
@@ -71,24 +68,19 @@ body {
   background-size: cover;
 }
 
-.item:nth-of-type(1):hover ~ body,
-.item:nth-of-type(1).expanded ~ body {
+.item:nth-of-type(1):hover ~ body {
   background: #f7e7a4;
 }
-.item:nth-of-type(2):hover ~ body,
-.item:nth-of-type(2).expanded ~ body {
+.item:nth-of-type(2):hover ~ body {
   background: #e04b4a;
 }
-.item:nth-of-type(3):hover ~ body,
-.item:nth-of-type(3).expanded ~ body {
+.item:nth-of-type(3):hover ~ body {
   background: #e6a1b1;
 }
-.item:nth-of-type(4):hover ~ body,
-.item:nth-of-type(4).expanded ~ body {
+.item:nth-of-type(4):hover ~ body {
   background: #e82e2e;
 }
-.item:nth-of-type(5):hover ~ body,
-.item:nth-of-type(5).expanded ~ body {
+.item:nth-of-type(5):hover ~ body {
   background: #a1e3e0;
 }
 
